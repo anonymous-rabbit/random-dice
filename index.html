@@ -28,14 +28,16 @@
       </header>
       <section>
         <h3>test</h3>
-        <button onClick="alert('Your result: ' + randomDie(10))">10 Sided Die</button>
+        <div>
+          <button onClick="randomDie(this,10))">10 Sided Die</button> <span id="testing">testing testing</span>
+        </div>
       </section>
       <footer>
         <script>
           
           
-          function randomDie(sides) {
-            
+          function randomDie(el,sides) {
+            alert(el.parentElement.lastChild.id);
             return random.integer(1,sides);
           }
         </script>
