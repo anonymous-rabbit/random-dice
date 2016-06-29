@@ -1,15 +1,17 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Random-dice by anonymous-rabbit</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" href="Random-dice%20by%20anonymous-rabbit_files/styles.css">
+    <link rel="stylesheet" href="Random-dice%20by%20anonymous-rabbit_files/github-light.css">
     
     <meta name="viewport" content="width=device-width">
-    <script src="javascripts/random.js" language="JavaScript" type="text/javascript"></script>
+    <script src="Random-dice%20by%20anonymous-rabbit_files/random.js" language="JavaScript" 
+
+type="text/javascript"></script>
     <script>
       // Random is now available as a global (on the window object)
       var random = new Random();
@@ -17,19 +19,43 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+  <style>
+   .die-result button{width: 150px;margin-right:30px;}
+   .die-result input{width:35px;}
+  </style>
   </head>
   <body>
     <div class="wrapper">
-      <header>
+     <header>
         <h1>Random-dice</h1>
         <p></p>
 
         
-      </header>
-      <section>
-        <h3>test</h3>
-        <div>
-          <button onClick="randomDie(this,10);">10 Sided Die</button> <span id="testing">testing testing</span>
+      </header> 
+      <section style="float:left;padding-top:55px;">
+        <h3>Random Dice Rolls</h3>
+        <div class = "die-result">
+          <button onclick="randomDie(this,20)">20 Sided Die</button> Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <button onclick="randomDie(this,12)">12 Sided Die</button>  Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <button onclick="randomDie(this,10)">10 Sided Die</button> Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <button onclick="randomDie(this,8)">8 Sided Die</button> Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <button onclick="randomDie(this,6)">6 Sided Die</button> Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <button onclick="randomDie(this,4)">4 Sided Die</button> Result: <span></span>
+        </div>
+        <div class = "die-result">
+          <input type="text" id="xSides" name="sides" value=13><button onclick="randomDie(this,0)" 
+
+style="width:110px;">X Sided Die</button> Result: <span></span>
         </div>
       </section>
       <footer>
@@ -37,15 +63,25 @@
           
           
           function randomDie(el,sides) {
-            alert(el.parentElement.lastChild.id);
-            return random.integer(1,sides);
+            if(sides==0){
+            sides = document.getElementById("xSides").value; 
+            }
+            el.parentElement.lastElementChild.innerHTML = random.integer(1,sides);
+          }
+          function callRandomDie(el) {
+            var button1 = el.parentElement.firstElementChild;
+            alert(button1.innerHTML);
+            button1.click();
           }
         </script>
         <p>This project is maintained by <a href="https://github.com/anonymous-rabbit">anonymous-rabbit</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages — Theme by <a 
+
+href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <script src="Random-dice%20by%20anonymous-rabbit_files/scale.js"></script>
     
-  </body>
-</html>
+  
+
+</body></html>
